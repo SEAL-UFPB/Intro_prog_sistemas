@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"unsafe"
-) // para importarmos mais do que uma biblioteca, utilizamos essa sintaxe
+)
+
+// para importarmos mais do que uma biblioteca, utilizamos essa sintaxe
 func main() {
 	var a int8 = 5 // inteiro 8 bits
 	// em go temos int8,int16,int32,int64
