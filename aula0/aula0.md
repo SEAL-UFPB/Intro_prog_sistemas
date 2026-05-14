@@ -14,39 +14,33 @@ sudo tar -C /usr/local -xzf *.tar.gz
 ```
 para extrair os arquivos no seu sistema
 
-para adicionar o go ao seu path utilize o comando abaixo:
+para guardar o go ao seu path utilize o comando abaixo:
 
+
+para quem usa o shell padrão da maioria das distribuições linux , o bash .
 
 ```bash
-export PATH=$PATH:/usr/local/go/bin
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc && source ~/.bashrc
 ```
-
-agora para testar se deu certo a instalação, saia e entre novamente no terminal, ou rode algum dos comandos abaixo: 
-
-
-```bash 
-source ~/.bashrc
-```
-para quem usa o shell padrão da maioria das distribuições linux , o bash .
 
 
 ou :
 
 
 ```bash 
-source ~/.zshrc
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc && source ~/.zshrc
 ```
 para quem usa o zsh como shell
 
 
 
-e depois disso é só rodar o comando 
+para verificar se deu certo, podemos só rodar o comando :
 
 ```bash 
 go version
 
 ```
-para ver a versão do go e garantir que está instalado 
+e ele vai mostrar a versão do go e garantir que está instalado 
 
 
 para sua informação, os tutoriais a seguir levam como consideração a versão ****go version go1.26.3 linux/amd64**** do go 

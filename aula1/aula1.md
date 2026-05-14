@@ -1,7 +1,7 @@
 # Introdução ao Go(lang)
 Com o Go baixado no seu sistema, vamos iniciar o nosso primeiro código
 
-## Passo 1 (criação do projeto)
+## criação do projeto
 
 ao digitar o comando abaixo no terminal, você irá criar seu primeiro projeto usando a linguagem 
 
@@ -12,7 +12,7 @@ go mod init aula1
 ```
 após você fazer isso você terá um arquivo chamado go.mod, esse arquivo é o nosso gerenciador de dependências. similar ao cargo.toml do rust e ao requirements.txt do python 
 
-## Passo 2 (arquivo principal)
+## arquivo principal
 
 Com o projeto já iniciado , crie um arquivo chamado de main.go, que conterá sua função principal do projeto 
 ```bash 
@@ -29,7 +29,7 @@ func main(){
 
 ```
 
-## Passo 3 ( Hello world)
+## Hello world
 em go, utilizamos a biblioteca fmt para printar informações no terminal, para isso utilizamos a função Println dessa biblioteca
 
 
@@ -61,7 +61,7 @@ go run  main.go
 
 ```
 
-## Passo 4 (variáveis e tipos primitivos)
+## variáveis e tipos primitivos
 
 
 
@@ -120,7 +120,7 @@ func main(){
 }
 
 ```
-## Passo 5 (verbos de formatação)
+## verbos de formatação
 
 Já utilizamos os verbos de formatação no passo anterior, mas vou me aprofundar neles agora:
 
