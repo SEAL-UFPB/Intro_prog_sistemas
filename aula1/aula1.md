@@ -45,6 +45,22 @@ fmt.Println("Hello world")
 
 ```
 
+para rodar o programa, temos 2 formas principais 
+
+##### compilando e depois rodando 
+
+```bash 
+go build main.go 
+./main 
+
+```
+##### compilando e rodando 
+
+```bash 
+go run  main.go 
+
+```
+
 ## Passo 4 (variáveis e tipos primitivos)
 
 
