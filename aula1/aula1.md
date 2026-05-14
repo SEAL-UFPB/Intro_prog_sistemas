@@ -77,7 +77,7 @@ func main(){
   m:=2.1 
   n:= 3.5 // em go podemos utilizar a sintaxe := para fazer inferência de tipos 
   var o complex128 = complex(m,n) // curiosidade, em go temos os tipos complex, complex64 que é formado por 2 float32 e complex128 que é formado por 2 float64
-
+  
   fmt.Printf("%-5s | %-12s | %-10s | %-10s\n", "VAR", "TIPO", "TAMANHO", "VALOR")
 	fmt.Println("------------------------------------------------------------")
 
@@ -104,5 +104,25 @@ func main(){
 }
 
 ```
+## Passo 5 (verbos de formatação)
 
+Já utilizamos os verbos de formatação no passo anterior, mas vou me aprofundar neles agora:
 
+- %v (Value): O valor na sua forma padrão. O Go decide como imprimir baseando-se no tipo.
+- %+v: Útil para structs, pois imprime o nome dos campos junto com os valores.
+- %#v: Mostra o valor em sintaxe Go (útil para debug pesado, pois mostra como recriar aquela variável).
+- %T (Type): Imprime o tipo da variável (ex: int8, string, main.Pessoa).
+- %d (Decimal): Base 10 (o padrão para humanos).
+- %b (Binary): Mostra os bits (0s e 1s). Essencial para ensinar operações bitwise.
+- %x / %X (Hexadecimal): Base 16. Muito usado para endereços de memória e cores.
+- %o (Octal): Base 8. Comum para mostrar permissões de arquivos no Linux (ex: 0755)
+- %f (Float): Notação decimal padrão (ex: 3.141593).
+- %.2f: Limita a quantidade de casas decimais.
+- %e / %E: Notação científica (ex: 3.141593e+00)
+- %s (String): Imprime o texto puro.
+- %q (Quoted): Coloca aspas ao redor da string e escapa caracteres especiais (útil para ver se há um \n escondido no final).
+- %c (Character): Transforma um número (byte ou rune) na sua representação visual (ex: 65 vira 'A').
+- %U (Unicode): Mostra o código no formato U+0041 (para runes)
+- %10d: Reserva 10 espaços e alinha à direita.
+- %-10d: Reserva 10 espaços e alinha à esquerda.
+- %010d: Reserva 10 espaços e preenche os vazios com zeros (ex: 0000000015).
