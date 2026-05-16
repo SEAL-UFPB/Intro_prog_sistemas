@@ -34,6 +34,18 @@ func Dividir(a, b float64) (float64, string) {
 
 > [!IMPORTANT] Essa não é a forma que realmente utilizamos em go para lidar com erros, mas por enquanto, isso vai bastar
 
+Outro aspecto interessante, é que se quisermos, podemos receber um número indeterminado de parâmetros em uma função, como no exemplo a seguir:
+
+```go 
+func SomarTudo(numeros ...int) int {
+    total := 0
+    for _, n := range numeros {
+        total += n
+    }
+    return total
+}
+```
+
 ## cidadãs de primeira classe
 As funções em go são tradadas como cidadãs de primeira classe, isso é, podemos tratar elas como qualquer outra variável.
 

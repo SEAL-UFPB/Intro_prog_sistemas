@@ -142,3 +142,88 @@ Já utilizamos os verbos de formatação no passo anterior, mas vou me aprofunda
 - %10d: Reserva 10 espaços e alinha à direita.
 - %-10d: Reserva 10 espaços e alinha à esquerda.
 - %010d: Reserva 10 espaços e preenche os vazios com zeros (ex: 0000000015).
+
+
+## Operadores 
+
+### principais operadores
+em go temos os principais operadores que normalmente teríamos em outras linguagens, como:
+- soma 
+  - a + b 
+  - o mesmo operador pode ser usado para concatenação de strings 
+- subtração 
+  - a - b 
+- multiplicação 
+  - a * b 
+- divisão 
+  - a / b 
+  - assim como em c, se os 2 operados forem inteiros, o resultado será um inteiro "truncado", ou seja, vai ignorar os valores após o '.'
+- resto da divisão
+  - a % b
+
+outro operador importante é atribuição:
+- a = 4 
+  - aqui atribuimos o valor 4 à variável **a**, se quisermos fazer uma atribuição com inferência de tipo, utilizamos a sintaxe a:=4 , é mais comum vermos ele no go do que a atribuição simples 
+  - temos também como utilizar operações junto de atribuição
+    - a+=4 
+      - o que é um açúcar sintático para a expressão, a=a+4 
+
+### Operadores de comparação 
+os operadores de comparação, comparam 2 valores e retorna um booleano, verificando a veracidade da comparação 
+
+- == 
+  - compara se 2 valores são iguais 
+- != 
+  - compara se 2 valores são diferentes 
+- \>
+  - faz a comparação a > b e retorna se a é maior que b 
+- \>=
+  - faz a comparação a >= b e retorna se a é maior ou igual a b
+- <
+  - faz a comparação a < b e retorna se a é menor que b
+- <= 
+  - faz a comparação a <= b e retorna se a é menor ou igual a b 
+  
+
+### Operadores lógicos
+
+temos os operadores lógicos :
+- && 
+  - retorna verdadeiro se os dois valores comparados são verdadeiros 
+- || 
+  - retorna verdadeiro se ao menos um dos dois valores é verdadeiro 
+- ! 
+  - retorna falso se o valor é verdadeiro e vice-versa
+
+### Operadores de bits (bitwise)
+realizam operações diretamente sobre os bits, são mais complexos, mas também são os mais eficientes 
+
+
+- &	(AND)
+  - Compara bit a bit; resulta 1 se ambos forem 1.
+- |	(OR)
+  -	Resulta 1 se ao menos um bit for 1.
+- ^	(XOR)	
+  - Resulta 1 se os bits forem diferentes (Exclusivo).
+- &^	(AND NOT)
+  - Bit clear: limpa os bits do primeiro que estão setados no segundo.
+- <<	(Left Shift)	
+  - Desloca os bits para a esquerda (multiplica por 2).
+- \>\>	(Right Shift)	
+  - Desloca os bits para a direita (divide por 2).
+
+### Incremento 
+em go temos o operador de Incremento e decremento, assim como em c 
+
+- x++
+  - incrementa em 1 
+- x-- 
+  - decrementa em 1 
+
+> [!IMPORTANT] Em go, esses operadores não retornam valores, ou seja, eles apenas realizam a instrução. 
+
+
+## Condições 
+
+## loops 
+
