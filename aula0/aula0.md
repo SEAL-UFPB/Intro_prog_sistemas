@@ -1,6 +1,19 @@
 # Instalação do go no linux 
-vá para o link :https://go.dev/dl/ e baixe o arquivo *.tar.gz equivalente à arquitetura do seu computador, normalmente é amd64 
+## Instalação automática 
+Caso você esteja utilizando um computador com o sistema operacional linux e com a arquitetura x64, criei um comando específico que já automatiza a instalação para você
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/BASE-UFPB/Intro_prog_sistemas/main/aula0/goinstall.sh | bash
+```
+e depois é só rodar esse comando no terminal, para recarregar sua sessão e já mostra a versão do go para verificar que funcionou mesmo
+
+```bash
+[ -f "$HOME/.$(basename $SHELL)rc" ] && . "$HOME/.$(basename $SHELL)rc" && go version
+```
+
+
+## Instalação manual
+vá para o link :https://go.dev/dl/ e baixe o arquivo *.tar.gz equivalente à arquitetura do seu computador, normalmente é amd64 
 rode o comando abaixo na pasta onde você baixou o arquivo 
 ```bash
 sudo rm -rf /usr/local/go
