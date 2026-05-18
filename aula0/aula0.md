@@ -1,3 +1,9 @@
+# Sobre o professor
+Sou Mikael Menezes, aluno da universidade federal da paraíba e sou apaixonado por programação de sistemas
+Eu recomendo fortemente que você faça perguntas se tiver, tire dúvidas ou até entre em contato caso queira apenas discutir sobre assuntos diversos
+Por isso eu divulgo meu contato para vocês. Email: mixaelmenezes@gmail.com, se quiser meu número do whatsapp, é só mandar um email pedindo
+
+
 # Instalação do go no linux 
 ## Instalação automática 
 Caso você esteja utilizando um computador com o sistema operacional linux e com a arquitetura x64, criei um comando específico que já automatiza a instalação para você
