@@ -3,10 +3,8 @@
 Caso você esteja utilizando um computador com o sistema operacional linux e com a arquitetura x64, criei um comando específico que já automatiza a instalação para você
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/BASE-UFPB/Intro_prog_sistemas/main/aula0/goinstall.sh | bash
+wget -qO- https://raw.githubusercontent.com/BASE-UFPB/Intro_prog_sistemas/main/aula0/goinstall.sh | bash
 ```
-e depois é só rodar esse comando no terminal, para recarregar sua sessão e já mostra a versão do go para verificar que funcionou mesmo
-
 ```bash
 [ -f "$HOME/.$(basename $SHELL)rc" ] && . "$HOME/.$(basename $SHELL)rc" && go version
 ```
