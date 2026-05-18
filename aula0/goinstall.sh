@@ -28,4 +28,3 @@ else
     echo "PATH já configurado em $CONF_FILE"
 fi
 
-echo "Instalação concluída. Rode 'source $CONF_FILE' para atualizar a sessão atual."
