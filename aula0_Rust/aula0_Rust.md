@@ -35,11 +35,11 @@ Hoje Rust é utilizada em:
 
 Grandes empresas como:
 
-* entity["company","Microsoft","Redmond, WA, USA"]
-* entity["company","Google","Mountain View, CA, USA"]
-* entity["company","Amazon","Seattle, WA, USA"]
-* entity["company","Cloudflare","San Francisco, CA, USA"]
-* entity["company","Discord","San Francisco, CA, USA"]
+- Microsoft
+- Google
+- Amazon
+- Cloudflare
+- Discord
 
 utilizam Rust em produção.
 
@@ -216,12 +216,6 @@ O Cargo:
 cargo build
 ```
 
-O binário ficará em:
-
-```txt
-target/debug/
-```
-
 ---
 
 ## Build otimizada (release)
@@ -229,14 +223,6 @@ target/debug/
 ```bash
 cargo build --release
 ```
-
-O binário otimizado ficará em:
-
-```txt
-target/release/
-```
-
-Essa versão ativa otimizações pesadas do compilador.
 
 ---
 
