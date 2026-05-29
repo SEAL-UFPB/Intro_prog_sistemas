@@ -4,6 +4,19 @@ Sou Mikael Menezes, aluno da universidade federal da paraíba e sou apaixonado p
 Por isso eu divulgo meu contato para vocês. Email: mixaelmenezes@gmail.com, se quiser meu número do whatsapp, é só mandar um email pedindo.
 E não tenha medo de perguntar, eu sempre digo pra todo mundo : "não existe pergunta besta, besta é não perguntar".
 
+# Por que Go?
+abaixo podemos ver uma linha que robustamente representa linguagens e suas complexidades/nível de acesso ao hardware, quanto mais à esquerda, mais acesso ao hardware a linguagem têm e à medida que a linha segue à direita, mais abstração com relação ao hardware temos. 
+[Hardware] ----------------------------------------------------------------------------------> [Abstração]
+
+ C / Zig / Rust          Go              JVM (Java/Kotlin)                             JavaScript / Lua / Python / Bash
+  (Hard Systems)     (Cloud Sys)           (Applications)                                       (Pure Script)
+
+o que chamamos de programação de sistemas normalmente se refere ao lado mais à esquerda da faixa, já que temos acesso e controle direto sobre o hardware,enquanto linguagens de script, normalmente costumam abstrair esse acesso para nós, sendo representadas à direita. Porém à medida que abstraimos o hardware, menos controle temos, mas ao mesmo tempo ganhamos mais facilidade ao programar.
+
+Mas por que Go? 
+
+Go ainda se encontra no escopo de linguagens de baixo nível, mas por ele possuir um coletor de lixo, ele facilita bastante a vida do programador, abdicando só um pouco da performance
+
 
 # Instalação do go no linux 
 ## Instalação automática 
@@ -61,4 +74,4 @@ go version
 e ele vai mostrar a versão do go e garantir que está instalado 
 
 
-para sua informação, os tutoriais a seguir levam como consideração a versão ****go version go1.26.3 linux/amd64**** do go 
+para sua informação, os tutoriais a seguir levam como consideração a versão ****go version go1.26.3 linux/amd64**** do go
