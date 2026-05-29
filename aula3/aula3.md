@@ -2,7 +2,7 @@
 
 em go a sintaxe de funções seguem o padrão a seguir 
 
-```go 
+```go
 func Somar(a int, b int) int {
     return a + b
 }
@@ -19,6 +19,10 @@ o que significa a mesma coisa da função anterior
 
 > [!IMPORTANT] Isso só funciona com parâmetros de mesmo tipo 
 
+> [!IMPORTANT] main(): O ponto de entrada do programa. Não recebe argumentos e não retorna nada.
+init(): Executada automaticamente assim que o pacote é carregado, antes da main. Útil para configurar estados globais ou conexões de banco de dados.
+
+> [!IMPORTANT] Assim como em C, o go passa todos os argumentos como valores, diferentemente de outras linguagens com coletor de lixo. Isso exige que utilizemos ponteiros em certas ocasiões.
 
 ## Múltiplos retornos 
 uma das principais características de go é a possibilidade de Múltiplos retornos ,muito utilizado para o tratamento de erros em go, assunto que abordaremos em aulas futuras 
@@ -45,6 +49,32 @@ func SomarTudo(numeros ...int) int {
     return total
 }
 ```
+
+### Além de múltiplos retornos, também podemos os nomear
+```go
+func GetConfig() (host string, porta int) {
+    host = "localhost"
+    porta = 8080
+    return // retorna host e porta automaticamente
+}
+```
+
+nessa situação também instanciamos as variáveis host e porta na própria definição de retorno e automaticamente retornamos seus valores sem precisar explicitar
+
+
+## Closures 
+
+```go
+func Contador() func() int {
+    i := 0
+    return func() int {
+        i++
+        return i
+    }
+}
+```
+
+em go também podemos ter funções anônimas, que realizam a operação, sem necessariamente ser nomeada, muito útil para o tópico a seguir
 
 ## cidadãs de primeira classe
 As funções em go são tradadas como cidadãs de primeira classe, isso é, podemos tratar elas como qualquer outra variável.
@@ -90,3 +120,14 @@ func main() {
 na qual definimos um tipo OperacaoMatematica que é definido como uma função que recebe 2 inteiros e retorna um inteiro e podemos instanciar outras funções com esse tipo, como a função somar, além de que ainda podemos passar ela como um argumento da função executarOperacao
 
 
+## Defer
+
+Essencial para programação de sistemas. O defer adia a execução de uma função para o exato momento em que a função atual termina. É usado para garantir que recursos (arquivos, sockets, conexões) sejam fechados, não importa o que aconteça.
+```go
+func LerArquivo() {
+    f, _ := os.Open("dados.txt")
+    defer f.Close() // Garante o fechamento ao final da função
+
+    // ... processamento do arquivo
+}
+```
