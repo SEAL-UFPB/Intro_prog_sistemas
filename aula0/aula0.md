@@ -6,10 +6,13 @@ E não tenha medo de perguntar, eu sempre digo pra todo mundo : "não existe per
 
 # Por que Go?
 abaixo podemos ver uma linha que robustamente representa linguagens e suas complexidades/nível de acesso ao hardware, quanto mais à esquerda, mais acesso ao hardware a linguagem têm e à medida que a linha segue à direita, mais abstração com relação ao hardware temos. 
-[Hardware] ----------------------------------------------------------------------------------> [Abstração]
 
- C / Zig / Rust          Go              JVM (Java/Kotlin)                             JavaScript / Lua / Python / Bash
-  (Hard Systems)     (Cloud Sys)           (Applications)                                       (Pure Script)
+```text
+⚙️ [Hardware] ───────────────────────────────────────────────────────────────────────────── 🧩 [Abstração]
+
+ C / Zig / Rust            Go              JVM (Java/Kotlin)             JavaScript / Lua / Python / Bash
+ (Hard Systems)        (Cloud Sys)           (Applications)                        (Pure Script)
+```
 
 o que chamamos de programação de sistemas normalmente se refere ao lado mais à esquerda da faixa, já que temos acesso e controle direto sobre o hardware,enquanto linguagens de script, normalmente costumam abstrair esse acesso para nós, sendo representadas à direita. Porém à medida que abstraimos o hardware, menos controle temos, mas ao mesmo tempo ganhamos mais facilidade ao programar.
 
