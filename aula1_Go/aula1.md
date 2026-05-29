@@ -118,8 +118,14 @@ func main(){
 	fmt.Printf("n     | %-12T | %-2d bytes  | %v\n", n, unsafe.Sizeof(n), n)
 	fmt.Printf("o     | %-12T | %-2d bytes  | %v\n", o, unsafe.Sizeof(o), o)
 }
-
 ```
+
+## _
+
+O compilador do go é bem chatinho com variáveis instanciadas e nunca utilizadas, então se propositalmente quisermos declarar algo sem a utilizar depois, utilizamos '_' no início do nome da variável, bem útil, já que a maioria das ferramentas de lint do go ao perceberem uma variável não utilizada a remove do programa. 
+
+Além de que usamos somente o caractere '_' para indicarmos que realmente não nos importamos com o valor que será recebido, é basicamente um placeholder 
+
 ## verbos de formatação
 
 Já utilizamos os verbos de formatação no passo anterior, mas vou me aprofundar neles agora:

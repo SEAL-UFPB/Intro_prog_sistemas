@@ -131,3 +131,5 @@ func LerArquivo() {
     // ... processamento do arquivo
 }
 ```
+
+por conversão, a deixamos logo após instanciarmos a variável
