@@ -1,0 +1,184 @@
+# Variáveis, Mutabilidade e Tipos Primitivos
+
+Dando continuidade ao ecossistema do Rust, este módulo aborda como a linguagem gerencia dados na memória através de variáveis e como seu sistema de tipos estático e forte funciona.
+
+---
+
+# Variáveis e Mutabilidade
+
+Por padrão, todas as variáveis em Rust são imutáveis. Essa é uma das principais escolhas de design da linguagem para garantir segurança e concorrência.
+
+## Imutabilidade Padrão
+
+O código abaixo gera um erro de compilação:
+
+```rust
+fn main() {
+    let x = 5;
+    x = 6; // Não é possível atribuir duas vezes a uma variável imutável
+}
+```
+
+## Tornando uma variável mutável
+
+Para permitir que um valor mude, você deve usar explicitamente a palavra-chave `mut`:
+
+```rust
+fn main() {
+    let mut x = 5;
+    println!("O valor de x é: {x}");
+    
+    x = 6; // Por conta da variável ser mutável, a troca de valor é aceitável
+    println!("O valor de x agora é: {x}");
+}
+```
+
+## Sombreamento (Shadowing)
+
+Rust permite declarar uma nova variável com o mesmo nome de uma variável anterior. A segunda variável "sombreia" (oculta) a primeira.
+
+```rust
+fn main() {
+    let x = 5;
+    let x = x + 1; // x agora é 6
+    
+    {
+        let x = x * 2; // x agora é 12 (apenas dentro deste escopo)
+        println!("O x interno é: {x}");
+    }
+
+    println!("O x externo é: {x}"); // Retorna 6
+}
+```
+
+## Diferença entre `mut` e Shadowing
+
+- Com `mut`, alteramos o valor dentro do mesmo espaço de memória, mas não podemos mudar o tipo do dado.
+- Com *shadowing*, estamos criando uma variável totalmente nova, permitindo inclusive mudar o tipo preservando o mesmo nome:
+
+```rust
+let espacos = "   ";          // Tipo: &str (texto)
+let espacos = espacos.len();  // Tipo: usize (número de caracteres)
+```
+
+---
+
+# Tipos Primitivos: Escalares
+
+Rust é uma linguagem de tipagem estática, o que significa que o compilador precisa saber o tipo de todas as variáveis em tempo de compilação.
+
+Frequentemente o compilador infere o tipo, mas podemos anotá-los explicitamente usando `: tipo`.
+
+Um tipo escalar representa um único valor. Existem quatro tipos escalares principais:
+
+---
+
+## 1. Inteiros
+
+Divididos entre com sinal (`i`) e sem sinal (`u`).
+
+| Tamanho | Com Sinal | Sem Sinal |
+|---|---|---|
+| 8-bits | i8 | u8 |
+| 16-bits | i16 | u16 |
+| 32-bits | i32 (padrão) | u32 |
+| 64-bits | i64 | u64 |
+| 128-bits | i128 | u128 |
+| Arquitetural | isize | usize (tamanho do ponteiro da máquina) |
+
+```rust
+let inteiro_padrao = 42; // i32
+let bytes: u8 = 255;
+let tamanho_vetor: usize = 10;
+```
+
+Em caso de *integer overflow*, o Rust realiza o comportamento de *wrap around* (ou seja, `255 + 1` em um `u8` vira `0`), evitando travar o programa, mas quebrando expectativas lógicas se não monitorado.
+
+---
+
+## 2. Ponto Flutuante (Floats)
+
+Rust possui dois tipos de pontos flutuantes.
+
+```rust
+let x = 2.0; // f64 (padrão, possui maior precisão em CPUs modernas)
+let y: f32 = 3.0; // f32
+```
+
+---
+
+## 3. Booleans
+
+Representam apenas `true` ou `false`. Ocupam 1 byte na memória.
+
+```rust
+let t = true;
+let f: bool = false;
+```
+
+---
+
+## 4. Caracteres (`char`)
+
+Diferente de linguagens baseadas em C, o tipo `char` em Rust possui 4 bytes de tamanho e representa um valor escalar Unicode.
+
+Ele suporta acentos, emojis e caracteres especiais orientais.
+
+```rust
+let c = 'z';
+let z: char = 'ℤ';
+let coracao = '❤️'; // Literais char usam aspas simples
+```
+
+---
+
+# Tipos Primitivos: Compostos
+
+Tipos compostos podem agrupar múltiplos valores em um único tipo.
+
+---
+
+## 1. Tuplas
+
+Uma tupla agrupa valores de diferentes tipos em uma estrutura de tamanho fixo.
+
+```rust
+fn main() {
+    // Declaração
+    let tupla: (i32, f64, u8) = (500, 6.4, 1);
+
+    // Desestruturação para ler valores
+    let (x, y, z) = tupla;
+    println!("O valor de y é: {y}");
+
+    // Acesso direto via ponto (.)
+    let quinhentos = tupla.0;
+    let um = tupla.2;
+}
+```
+
+---
+
+## 2. Arrays (Matrizes)
+
+Diferente de vetores dinâmicos, um array em Rust possui tamanho fixo e todos os elementos devem ser do mesmo tipo.
+
+Eles são alocados diretamente na *Stack*.
+
+```rust
+fn main() {
+    // Sintaxe: [tipo; tamanho]
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    // Inicializando um array com o mesmo valor para todas as posições
+    let repetido = [3; 5]; // O mesmo que: [3, 3, 3, 3, 3]
+
+    // Acesso a elementos
+    let primeiro = a[0];
+    let segundo = a[1];
+}
+```
+
+### Segurança de Memória
+
+Se você tentar acessar um índice inválido (ex: `a[10]`), o Rust irá gerar um erro em tempo de execução (*panic*) e abortar o programa imediatamente, impedindo acessos não autorizados à memória.
